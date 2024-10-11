@@ -6,6 +6,10 @@ public class ResourceCloseMainV4 {
             logic();
         } catch (CallException e) {
             System.out.println("CallException 예외 처리");
+            Throwable[] suppressed = e.getSuppressed();
+            for (Throwable throwable : suppressed) {
+                System.out.println("suppressedEx = " + throwable);
+            }
             e.printStackTrace();
         } catch (CloseException e) {
             System.out.println("CloseException 예외 처리");
